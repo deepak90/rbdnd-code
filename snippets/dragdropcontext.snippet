@@ -1,0 +1,39 @@
+import { DragDropContext } from 'react-beautiful-dnd';
+
+class App extends React.Component {
+  onBeforeDragStart = () => {
+    // Called just before onDragStart, not used much
+    ...
+  };
+
+  onDragStart = () => {
+    // a drag has started
+    ...
+  };
+
+  onDragUpdate = () => {
+    // Something has changed during a drag
+    ...
+  };
+
+  onDragEnd = () => {
+  /*(required): A drag has ended. 
+  It is the responsibility of this responder to synchronously apply 
+  changes that has resulted from the drag
+  */
+   ...
+  };
+
+  render() {
+    return (
+      <DragDropContext
+        onBeforeDragStart={this.onBeforeDragStart}
+        onDragStart={this.onDragStart}
+        onDragUpdate={this.onDragUpdate}
+        onDragEnd={this.onDragEnd}
+      >
+        <div>Hello world</div>
+      </DragDropContext>
+    );
+  }
+}
