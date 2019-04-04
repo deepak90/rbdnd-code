@@ -13,6 +13,9 @@ import dracula from "prism-react-renderer/themes/dracula";
 ## Drag and Drop interfaces using react-beautiful-dnd
 ![logo](./images/rbdnd-logo.png)
 
+#### Deepak Jayaram
+#### VT Maple Script
+
 <Notes>
   <ul>
     <li>DND is an amazing type interaction in software - it is expresssive, relatable with human interaction</li>
@@ -44,7 +47,7 @@ export default Split
 
 ![question](./images/question.png)
 
-<ul>
+<ul style={{padding: "50px", textAlign: "left"}}>
   <li>Higher level abstraction for drag and drop</li>
   <li>Not for everyone - primarily for lists / list of lists / connected lists </li>
 </ul>
@@ -67,10 +70,11 @@ export default Split
 
 ![animation-curve](./images/dnd-ease-in-out-small.png)
 
-### Natural Movement of items
-<ul style={{padding: "50px"}}>
-    <li>Drag and Drop animations feel weighted and physical</li>
-    <li>Uses native CSS under the hood to achieve smooth animation</li>
+### Easy to Style
+<ul style={{padding: "50px", textAlign: "left"}}>
+    <li style={{paddingBottom: "5px"}}>Natural Drag and Drop animations feel weighted and physical</li>
+    <li style={{paddingBottom: "5px"}}>Uses native CSS under the hood to achieve smooth animation</li>
+    <li>very minimal restrictions on styling - unopinionated </li>
 </ul>
 
 ---
@@ -80,9 +84,9 @@ export default Split
 ![accessible](./images/accessibility.png)
 
 ### Accessible
-<ul style={{padding: "50px"}}>
-    <li>Ships with support for D&D interactions using only a keyboard</li>
-    <li>Awesome screen reader support (English supported out of the box 📦)</li>
+<ul style={{padding: "50px", textAlign: "left"}}>
+    <li style={{paddingBottom: "5px"}}>Ships with support for D&D interactions using only a keyboard</li>
+    <li style={{paddingBottom: "5px"}}>Awesome screen reader support (English supported out of the box 📦)</li>
     <li>uses aria attributes for drag interactions, focus and error states</li>
 </ul>
 
@@ -93,27 +97,15 @@ export default Split
 ![code](./images/react.png)
 
 ### Easy to use API
-<ul style={{padding: "50px"}}>
-    <li>Well written and excellent documentation overall</li>
-    <li>Uses render props to eliminate the need for wrapping divs</li>
-    <li>Freedom to choose your own data representation</li>
+<ul style={{padding: "50px", textAlign: "left"}}>
+    <li style={{paddingBottom: "5px"}}>Well written and excellent documentation overall</li>
+    <li style={{paddingBottom: "5px"}}>Uses render props to eliminate the need for wrapping divs</li>
+    <li style={{paddingBottom: "5px"}}>Freedom to choose your own data representation</li>
     <li>Plays well with your favorite state management and middleware libraries</li>
 </ul>
 
 ---
-
-
-export default Split
-
-![code](./images/styling.gif)
-
-### Easy to style
-<ul style={{padding: "50px"}}>
-  <li>very minimal restrictions on styling - unopinionated </li>
-</ul>
-
----
-## API
+# API
 
 ---
 
@@ -125,8 +117,8 @@ export default Split
 ### Components
 <ul style={{padding: "50px", listStyle: 'none'}}>
   <Appear>
-    <li>DragDropContext</li>
-    <li>Droppable</li>
+    <li style={{paddingBottom: "10px"}}>DragDropContext</li>
+    <li style={{paddingBottom: "10px"}}>Droppable</li>
     <li>Draggable</li>
   </Appear>
 </ul>
@@ -145,10 +137,16 @@ export default Split
   showNumbers
   steps={[
     { tokens: {1: [3, 8]}, notes: "import DragDropContext" },
-    { ranges: [[4, 7], [9, 12], [14, 17], [19, 25]], notes: "methods(responders) you can make use of to perform your own state updates, style updates, as well as to make screen reader announcements" },
+    { ranges: [[4, 7], [9, 12], [14, 17], [19, 25]], notes: "Methods for state, style, and accessibility updates" },
     { range: [19, 25], notes: "This is required for the library to function" },
   ]}
 />
+
+<Notes>
+  <ul>
+    <li>methods(responders) you can make use of to perform your own state updates, style updates, as well as to make screen reader announcements</li>
+  </ul>
+</Notes>
 
 ---
 
@@ -169,7 +167,6 @@ export default Split
 <Notes>
   <ul>
     <li>This function is extremely important and has an critical role to play in the application lifecycle. This function must result in the synchronous reordering of a list of Draggables</li>
-    <li>Demo: switch to slide</li>
   </ul>
 </Notes>
 
@@ -237,6 +234,7 @@ export default Split
 ---
 
 <h2><a href="https://sharp-keller-12f625.netlify.com/" target="_BLANK">Demo</a></h2>
+###### opens in a new tab
 
 ---
 
