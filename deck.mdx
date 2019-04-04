@@ -18,7 +18,7 @@ import dracula from "prism-react-renderer/themes/dracula";
 
 <Notes>
   <ul>
-    <li>DND is an amazing type interaction in software - it is expresssive, relatable with human interaction</li>
+    <li>DND is an amazing type of interaction in software - it is expresssive, relatable with human interaction</li>
   </ul>
 </Notes>
 
@@ -29,6 +29,15 @@ export default Split
 ![collage1](./images/collage1.png)
 
 ![collage2](./images/collage2.png)
+
+<Notes>
+  <ul>
+    <li>A big client ask for the new NADA index pages was to re-order sections on a page, eg: to move CTA sections or the contact widget up the page</li>
+    <li>A quick win for us was to create a lightweight editor in reactJS that could easily represent these sections as a flat list inside a Modal </li>
+    <li>What felt natural for us at that time was use a drag and drop mechanic - we looked at many libraries and we eventually settled in on this</li>
+    <li>we thought this was a really cool piece of tech and i'm excited to show you guys what this is</li>
+  </ul>
+</Notes>
 
 ---
 
@@ -41,6 +50,13 @@ export default Split
   <li>Editor for moving sections and groups around on a page</li>
 </ul>
 
+<Notes>
+  <ul>
+    <li>a react application that uses react beautiful drag and drop, redux, redux sagas to re-order sections on a page</li>
+    <li>I will be demoing this app later but I am not here to present this app, but the library itself</li>
+  </ul>
+</Notes>
+
 ---
 
 export default Split
@@ -48,15 +64,17 @@ export default Split
 ![question](./images/question.png)
 
 <ul style={{padding: "50px", textAlign: "left"}}>
-  <li>Higher level abstraction for drag and drop</li>
   <li>Not for everyone - primarily for lists / list of lists / connected lists </li>
 </ul>
 
 
 <Notes>
   <ul>
-    <li>Not just a low level api on top of browser api,  providing strong opinions on what the interactions should feel like when you move things around</li>
+    <li>Not just a low level api on top of browser api,  provides strong opinions on what the interactions should feel like when you move things around</li>
     <li> Not a lot of emphasis on drag affordances, relies on movement</li>
+    <li>if you're say designing a game or a novel drag and drop concept, this library is not for you </li>
+    <li>that hasnt stopped people from doing things with this - cards against humanity clone </li>
+    <li>very strong community - it's developed by Atlassian, makers of Jira, bitbucket and confluence - support and timely updates</li>
   </ul>
 </Notes>
 
@@ -77,6 +95,14 @@ export default Split
     <li>very minimal restrictions on styling - unopinionated </li>
 </ul>
 
+<Notes>
+  <ul>
+    <li> we haven't gone too crazy with the styling of our application, but from what I've seen, it's super simple to use the styling library of your choice like styled components or emotion </li>
+    <li> does not generate extra markup - full control over what your markup should be </li>
+    <li> Even gives us control over how the drop animation should be </li>
+  </ul>
+</Notes>
+
 ---
 
 export default Split
@@ -85,10 +111,17 @@ export default Split
 
 ### Accessible
 <ul style={{padding: "50px", textAlign: "left"}}>
+    <li style={{paddingBottom: "5px"}}>Accessible for mouse, touch and keyboard users</li>
     <li style={{paddingBottom: "5px"}}>Ships with support for D&D interactions using only a keyboard</li>
     <li style={{paddingBottom: "5px"}}>Awesome screen reader support (English supported out of the box 📦)</li>
     <li>uses aria attributes for drag interactions, focus and error states</li>
 </ul>
+
+<Notes>
+  <ul>
+    <li>This is something that really impressed me, it's very easy to set up and use this from just a keyboard</li>
+  </ul>
+</Notes>
 
 ---
 
@@ -104,7 +137,17 @@ export default Split
     <li>Plays well with your favorite state management and middleware libraries</li>
 </ul>
 
+
+<Notes>
+  <ul>
+    <li>One more thing that I don't have a slide for, is performance - they claim to render items in 60fps, that's 60 updates per second</li>
+    <li>they use redux under the hood to accomplish this shared state</li>
+    <li> like moving things around in response to user input, moving other things out of the way, dynamic style updates, what needs to be rendered and when is all done very quickly</li>
+  </ul>
+</Notes>
+
 ---
+
 # API
 
 ---
@@ -122,6 +165,13 @@ export default Split
     <li>Draggable</li>
   </Appear>
 </ul>
+
+<Notes>
+  <ul>
+    <li>This Diagram is the most simplest way of describing this API </li>
+    <li>you have a parent container, the context, several droppables inside of that context, and several draggables inside of a droppable</li>
+  </ul>
+</Notes>
 
 ---
 
@@ -144,6 +194,8 @@ export default Split
 
 <Notes>
   <ul>
+    <li> Think about this as the Provider component react-redux gives us </li>
+    <li> It is advised to just wrap your entire application in a DragDropContext </li>
     <li>methods(responders) you can make use of to perform your own state updates, style updates, as well as to make screen reader announcements</li>
   </ul>
 </Notes>
@@ -195,7 +247,7 @@ export default Split
 <Notes>
   <ul>
     <li>droppableId needs to be unique within the DragDropContext</li>
-    <li>One reason the render props pattern is used, is so that react-beautiful-dnd does not need to create any DOM nodes for you. You create your components that where you want to. react-beautiful-dnd latches into your existing structure.</li>
+    <li>One reason the render props pattern is used, is so that react-beautiful-dnd does not need to create any DOM nodes for you. You create your components that where you want to. react-beautiful-dnd latches onto your existing structure.</li>
     <li>The provided object has a property called innerRef, which is a function used to supply the DOM node of your component to react-beautiful-dnd.</li>
     <li>A placeholder is a React element that is used to increase the available space in a droppable during a drag when it's needed. The placeholder needs to be added as a child of the component that you designate as the droppable.</li>
     <li>droppableProps are props that need to be applied to the component that you want to designate as your Droppable</li>
@@ -233,8 +285,10 @@ export default Split
 
 ---
 
+<div>
 <h2><a href="https://sharp-keller-12f625.netlify.com/" target="_BLANK">Demo</a></h2>
-###### opens in a new tab
+<p>opens in a new tab</p>
+</div>
 
 ---
 
@@ -242,4 +296,25 @@ export default Split
 
 ---
 
+## References
+
+<div>
+<h5><a href="https://github.com/atlassian/react-beautiful-dnd" target="_BLANK">React Beautiful DND</a></h5>
+
+<h5><a href="https://medium.com/@alexandereardon" target="_BLANK">Alex Reardon</a></h5>
+
+<h5><a href="https://github.com/jxnblk/mdx-deck" target="_BLANK">MDX Deck</a></h5>
+
+<h5><a href="https://github.com/pomber/code-surfer" target="_BLANK">Code Surfer</a></h5>
+
+</div>
+---
+
 ## Thank you!
+
+<Notes>
+  <ul>
+    <li>Thank you guys! I wanna close out by saying that looking at the implementation/ source code for these awesome libraries make us better programmers</li>
+    <li>Alex Reardon - Principal engineer at Atlassian, is an amazing resource for drag and drop experinces, if you haven't already, follow him on twitter - he goes in depth about FE optimizations react performance </li>
+  </ul>
+</Notes>
